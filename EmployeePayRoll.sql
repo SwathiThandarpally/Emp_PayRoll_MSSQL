@@ -18,3 +18,6 @@ INSERT INTO Employee_Payroll(Name,Salary,Start)VALUES
 ('Moksha',20000,'2010-09-22'),
 ('Tommy',17500,'2011-08-12');
 select * from employee_payroll;
+ 
+--UseCase-4 retrieve all the employee payroll
+select * from employee_payroll;
