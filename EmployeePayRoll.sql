@@ -30,3 +30,10 @@ ALTER TABLE employee_payroll ADD Gender varchar(10)
 UPDATE employee_payroll SET Gender ='Female' WHERE Name='Kairali'
 UPDATE employee_payroll SET Gender='Female' WHERE Name='Moksha'
 UPDATE employee_payroll SET Gender='Male' WHERE Name='Tommy'
+
+--UseCase-7 
+SELECT SUM(Salary) AS SumOfSalary FROM employee_payroll WHERE Gender='Female' GROUP BY Gender
+SELECT AVG(Salary) AS AvgSalary FROM employee_payroll WHERE Gender='Female' GROUP BY Gender
+SELECT MAX(Salary) AS MaxSalary FROM employee_payroll WHERE Gender = 'Female' GROUP BY Gender
+SELECT MIN(Salary) AS MinSalary FROM employee_payroll WHERE Gender = 'Female' GROUP BY Gender
+select COUNT(Gender) AS EmployeeCount,'Female' FROM employee_payroll GROUP BY Gender
