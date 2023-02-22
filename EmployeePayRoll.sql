@@ -31,9 +31,19 @@ UPDATE employee_payroll SET Gender ='Female' WHERE Name='Kairali'
 UPDATE employee_payroll SET Gender='Female' WHERE Name='Moksha'
 UPDATE employee_payroll SET Gender='Male' WHERE Name='Tommy'
 
---UseCase-7 
+--UseCase-7 Sum, Average, Maximum, Minimum salary--
 SELECT SUM(Salary) AS SumOfSalary FROM employee_payroll WHERE Gender='Female' GROUP BY Gender
 SELECT AVG(Salary) AS AvgSalary FROM employee_payroll WHERE Gender='Female' GROUP BY Gender
 SELECT MAX(Salary) AS MaxSalary FROM employee_payroll WHERE Gender = 'Female' GROUP BY Gender
 SELECT MIN(Salary) AS MinSalary FROM employee_payroll WHERE Gender = 'Female' GROUP BY Gender
-select COUNT(Gender) AS EmployeeCount,'Female' FROM employee_payroll GROUP BY Gender
+SELECT gender, COUNT(name) FROM employee_payroll GROUP BY gender;
+
+--UseCase-8 extend store employee information like employee phone, address and department--
+ALTER TABlE employee_payroll ADD Department varchar(90) NOT NULL DEFAULT 'Developer';
+ALTER TABLE employee_payroll ADD PhoneNumber BIGINT;
+ALTER TABLE employee_payroll ADD Address varchar(350) NOT NULL DEFAULT 'INDIA';
+update employee_payroll set PhoneNumber = 9876543210, Address =' Hyderabad' where Id=1;
+update employee_payroll set PhoneNumber = 9876512345, Address = 'Delhi'  where Id=2;
+update employee_payroll set PhoneNumber = 9123456789, Address = 'Mumbai'  where ID IN (3); 
+
+select *from employee_payroll 
