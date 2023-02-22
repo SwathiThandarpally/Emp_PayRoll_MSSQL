@@ -45,5 +45,13 @@ ALTER TABLE employee_payroll ADD Address varchar(350) NOT NULL DEFAULT 'INDIA';
 update employee_payroll set PhoneNumber = 9876543210, Address =' Hyderabad' where Id=1;
 update employee_payroll set PhoneNumber = 9876512345, Address = 'Delhi'  where Id=2;
 update employee_payroll set PhoneNumber = 9123456789, Address = 'Mumbai'  where ID IN (3); 
+select * from employee_payroll 
 
-select *from employee_payroll 
+--UC9 Employee_payroll table to have Basic Pay, Deductions, Taxable Pay, Income Tax, Net Pay
+ALTER TABLE employee_payroll ADD Basic_Pay FLOAT NOT NULL DEFAULT 20000;
+ALTER TABLE employee_payroll ADD Deductions FLOAT NOT NULL DEFAULT 2000;
+ALTER TABLE employee_payroll ADD Taxable_Pay FLOAT NOT NULL DEFAULT 1000;
+ALTER TABLE employee_payroll ADD Income_Tax FLOAT NOT NULL DEFAULT 100;
+ALTER TABLE employee_payroll ADD Net_Pay FLOAT NOT NULL DEFAULT 20000;
+update employee_payroll set Net_Pay = 18900;
+SELECT * FROM employee_payroll;
